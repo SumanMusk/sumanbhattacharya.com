@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
       allowedHosts: true,
       proxy: {
         '/api': {
-          target: `http://localhost:${env.BACKEND_PORT || 5000}`,
+          target: env.VITE_PRODUCTION === "true" ? env.VITE_API_URL : `http://localhost:${env.BACKEND_PORT || 5000}`,
           changeOrigin: true,
         }
       }

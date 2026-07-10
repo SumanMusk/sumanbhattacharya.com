@@ -18,6 +18,7 @@ const ContactMeSection = () => {
 
     const sendData = async (formData) => {
         try {
+            console.log(formData);
             const res = await axios.post("/api/submit", formData);
             if (res.status === 200) {
                 setIsEmailSent(true);
